@@ -1,0 +1,10 @@
+2024-06-10T15:50:35.0590850Z    Knob: AgentToolsDirectory = /opt/hostedtoolcache Source: ${AGENT_TOOLSDIRECTORY} 
+2024-06-10T15:50:35.0592405Z    Knob: UseGitLongPaths = true Source: $(USE_GIT_LONG_PATHS) 
+2024-06-10T15:50:35.0592959Z    Knob: UseLatestGitVersion = true Source: $(USE_LATEST_GIT_VERSION) 
+2024-06-10T15:50:35.0593605Z    Knob: AgentPerflog = /home/vsts/perflog Source: ${VSTS_AGENT_PERFLOG} 
+2024-06-10T15:50:35.0594938Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2024-06-10T15:50:35.0596761Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC) 
+2024-06-10T15:50:35.0597161Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC_LOG) 
+2024-06-10T15:50:35.0597680Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2024-06-10T15:50:35.0598263Z    Knob: ProcessHandlerEnableNewLogic = true Source: $(AZP_75787_ENABLE_NEW_PH_LOGIC) 
+2024-06-10T15:50:35.0599114Z    Knob: IgnoreVSTSTaskLib = true Source: $(AZP_AGENT_IGNORE_VSTSTASKLIB) 

@@ -1,6 +1,6 @@
 To upload a log via logstash:
 	cd C:/code/ELK/logstash/bin
-	logstash -f C:/path/to/logstash.conf
+	logstash -f C:\code\ELK\logstash\config\logstash.conf
 
 To run any curl commands you must first:  
 	cd C:/code/curl
@@ -30,7 +30,7 @@ To upload multiple documents, format it like so in example file.json:
 	curl -XPOST http://localhost:9200/[index-name-here]/_bulk?pretty --data-binary @C:/path/to/file.json -H "Content-Type: application/json"
 
 To delete an index:
-	curl -XDELETE localhost:9200/[index-name-here]?pretty
+	curl -XDELETE http://localhost:9200/[index-name-here]?pretty
 
 To search each document in an index, replace [field 1] and [field 2] (make sure to remove the brackets but keep all other formatting) and replace them with your search terms
 	curl -XGET "http://localhost:9200/[index-name-here]/_search?pretty" -H "Content-Type: application/json" -d"{\"query\":{\"match\":{\"[field 1]\":\"[field 2]\"}}}"

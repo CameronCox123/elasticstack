@@ -1,0 +1,12 @@
+2024-05-29T17:17:19.0973417Z You are in 'detached HEAD' state. You can look around, make experimental
+2024-05-29T17:17:19.0973618Z changes and commit them, and you can discard any commits you make in this
+2024-05-29T17:17:19.0974227Z state without impacting any branches by switching back to a branch.
+2024-05-29T17:17:19.0974315Z 
+2024-05-29T17:17:19.0974461Z If you want to create a new branch to retain commits you create, you may
+2024-05-29T17:17:19.0974750Z do so (now or later) by using -c with the switch command. Example:
+2024-05-29T17:17:19.0974839Z 
+2024-05-29T17:17:19.0975004Z   git switch -c <new-branch-name>
+2024-05-29T17:17:19.0975068Z 
+2024-05-29T17:17:19.0975198Z Or undo this operation with:
+2024-05-29T17:17:19.0975269Z 
+2024-05-29T17:17:19.0975372Z   git switch -
