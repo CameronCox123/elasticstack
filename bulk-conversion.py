@@ -1,9 +1,9 @@
 import json
 
 # Define the input and output file paths
-input_file_path = 'C:/code/ELK/elasticsearch/azure-logs/log-293.txt'
-output_file_path = 'C:/code/ELK/elasticsearch/azure-json/json-293.json'
-index_name = 'bulk-index'
+input_file_path = 'C:/path/to/input/file.txt'
+output_file_path = 'C:/path/to/output/file.json'
+index_name = '[example-index]'
 
 # Read the log data from the file
 with open(input_file_path, 'r') as file:
