@@ -1,0 +1,14 @@
+{"index": {"_index": "bulk-index", "_id": "1"}}
+{"log_entry": "2024-06-10T20:13:00.7932357Z ##[section]Starting: Job"}
+{"index": {"_index": "bulk-index", "_id": "2"}}
+{"log_entry": "2024-06-10T20:13:01.0040784Z ##[section]Starting: Initialize job"}
+{"index": {"_index": "bulk-index", "_id": "3"}}
+{"log_entry": "2024-06-10T20:13:01.0045964Z Agent name: 'Hosted Agent'"}
+{"index": {"_index": "bulk-index", "_id": "4"}}
+{"log_entry": "2024-06-10T20:13:01.0046306Z Agent machine name: 'fv-az843-752'"}
+{"index": {"_index": "bulk-index", "_id": "5"}}
+{"log_entry": "2024-06-10T20:13:01.0046481Z Current agent version: '3.240.1'"}
+{"index": {"_index": "bulk-index", "_id": "6"}}
+{"log_entry": "2024-06-10T20:13:01.0086985Z ##[group]Operating System"}
+{"index": {"_index": "bulk-index", "_id": "7"}}
+{"log_entry": "2024-06-10T20:13:01.0087185Z Microsoft Windows Server 2022"}
