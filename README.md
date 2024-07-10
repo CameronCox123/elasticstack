@@ -42,38 +42,18 @@ THIS DOCUMENT IS INTENDED FOR WINDOWS, COMMANDS HAVE ONLY BEEN TESTED ON WINDOWS
 	```curl -XGET http://localhost:9200/_cat/indices```
 * ### To view the contents of the whole index: 
 	```curl -XGET "http://localhost:9200/[index-name-here]/_search?size=1000&pretty"```<- _size value is number of documents displayed_
-* ### To upload a single document using curl, first make sure your file is in a json format and only has one json object, then call:
+* ### To upload a single document:
+  	You don't need to create a new index before uploading a document, it'll do it for you, but make sure your file is in a json format and only has one json object
 	```curl -XPOST http://localhost:9200/[index-name-here]/_doc?pretty -H "Content-Type: application/json" -d @C:/path/to/file.json```
+
 ```
 WARNING!!!
 UPLOADING DOCUMENTS WITH CURL IS VERY INCONSISTENT, IT'S HIGHLY RECCOMENDED THAT YOU USE THE LOGSTASH METHOD LOCATED ABOVE. IF YOU NEED TO USE THE CURL METHOD, MAKE SURE IT'S IN A JSON FORMAT. FOR AZURE DEVOPS BUILD LOGS THERE IS A PROVIDED FORMATTING PROGRAM NAMED bulk-conversion.py IN THIS REPO THAT WILL CHANGE TAKE THE LOGS AND FORMAT THEM FOR .JSON
 ```
 
-You don't need to create a new index before uploading a document. It'll do it for you.
-To upload multiple documents, format it like so in example file.json:
+* ### To upload multiple documents:
+  	You can use bulk-conversion.py to format azure devops logs for bulk upload
+	```curl -XPOST http://localhost:9200/[index-name-here]/_bulk?pretty --data-binary @C:/path/to/file.json -H "Content-Type: application/json"```
 
-{"index": {"_index": "temp-index", "_id": "1"}}
-{"log_entry": "2024-06-10T20:13:00.7932357Z ##[section]Starting: Job"}
-{"index": {"_index": "temp-index", "_id": "2"}}
-{"log_entry": "2024-06-10T20:13:01.0040784Z ##[section]Starting: Initialize job"}
-{"index": {"_index": "temp-index", "_id": "3"}}
-
-  Then call:
-	curl -XPOST http://localhost:9200/[index-name-here]/_bulk?pretty --data-binary @C:/path/to/file.json -H "Content-Type: application/json"
-
-### To search each document in an index, replace [field 1] and [field 2] (make sure to remove the brackets but keep all other formatting) and replace them with your search terms
-	curl -XGET "http://localhost:9200/[index-name-here]/_search?pretty" -H "Content-Type: application/json" -d"{\"query\":{\"match\":{\"[field 1]\":\"[field 2]\"}}}"
-	
-	Example return:       
-       {
-        "_index" : "bulk-index",
-        "_id" : "43",
-        "_score" : 4.0176864,
-        "_source" : {
-          "log_entry" : "2024-06-10T20:13:04.1486660Z Finished checking job knob settings."
-        }
-
-To use curl to upload the log files:
-	Download the log file from a completed build on Dev-ops
-	Get the BIG log file that contains everything 
-	Run through text-to-json conversion
+* ### To search each document in an index, replace [field 1] and [field 2] (make sure to remove the brackets but keep all other formatting) and replace them with your search terms
+	```curl -XGET "http://localhost:9200/[index-name-here]/_search?pretty" -H "Content-Type: application/json" -d"{\"query\":{\"match\":{\"[field 1]\":\"[field 2]\"}}}"```
